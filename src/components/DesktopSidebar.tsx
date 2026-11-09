@@ -1,19 +1,15 @@
-import { Settings, LayoutDashboard, Folder, CircleCheck } from "lucide-react";
-import { useState } from "react";
+import { Settings, LayoutDashboard, Folder } from "lucide-react";
+import { NavLink } from "react-router";
 
 const navItems = [
-  { label: "Dashboard", href: "#dashboard", icon: LayoutDashboard },
-  { label: "Projects", href: "#projects", icon: Folder },
-  { label: "All tasks", href: "#alltasks", icon: CircleCheck },
+  { label: "Dashboard", href: "/", icon: LayoutDashboard },
+  { label: "Projects", href: "/projects", icon: Folder },
 ];
 
 const DesktopSidebar = () => {
-  // Example active state (you can hook this up to your router/location path)
-  const [activePath, setActivePath] = useState("#dashboard")
 
   return (
     <aside className="w-60 h-screen bg-sidebar border-r border-subtle flex flex-col justify-between p-3 select-none">
-      {/* Top Section: Brand Header */}
       <div className="flex flex-col items-start gap-1 px-2 pt-1">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -57,36 +53,41 @@ const DesktopSidebar = () => {
         </p>
       </div>
 
-      {/* Navigation List */}
-      <nav className="flex-1 mt-6">
-        <ul className="flex flex-col gap-1.5 list-none m-0 p-0">
+      <nav className="flex-1 mt-5">
+        <ul className="flex flex-col gap-1 list-none m-0 p-0">
           {navItems.map((item) => {
             const Icon = item.icon;
-            const isActive = activePath === item.href;
 
             return (
-              <li key={item.label}>
-                <a
-                  href={item.href}
-                  onClick={() => setActivePath(item.href)}
-                  className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${isActive
+              <li key={item.label} >
+                <NavLink
+                  to={item.href}
+                  end
+                  className={({ isActive }) => `flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors 
+                  ${isActive
                       ? "bg-surface text-primary font-semibold shadow-sm"
                       : "text-muted hover:text-main hover:bg-surface-hover"
-                    }`}
+
+                    }`
+                  }
                 >
-                  <Icon
-                    size={18}
-                    className={isActive ? "text-primary" : "text-muted"}
-                  />
-                  <span>{item.label}</span>
-                </a>
+                  {({ isActive }) => (
+                    <>
+                      <Icon
+                        size={18}
+                        className={`${isActive ? "text-primary" : "text-muted"}`}
+                      />
+                      <span>{item.label}</span>
+                    </>
+                  )
+                  }
+                </NavLink>
               </li>
             );
           })}
         </ul>
       </nav>
 
-      {/* Bottom Section: Footer / Settings Area */}
       <footer className="pt-2 border-t border-subtle">
         <a
           href="#settings"

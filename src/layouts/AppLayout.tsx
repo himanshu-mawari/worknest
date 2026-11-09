@@ -8,9 +8,7 @@ const homeLayout = () => {
       <DesktopSidebar />
 
       <div className="flex-1 flex flex-col min-w-0">
-        <header className="h-16  px-6 flex items-center">
-          <Header />
-        </header>
+        <Header />
 
         <main className="flex-1 p-6">
           <Outlet />

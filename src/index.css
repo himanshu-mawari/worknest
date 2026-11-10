@@ -8,15 +8,20 @@
   --color-surface-hover: #1a1f29;
   --color-overlay: #181d26;
 
-  --color-subtle: #1f242d;
   --color-interactive: #262c38;
 
   --color-primary: #7c8cff;
   --color-primary-hover: #6978f5;
-  --color-on-primary: #0b0d10;
+  --color-on-primary: #001892;
 
   --color-main: #f1f3f5;
   --color-muted: #9299a5;
+
+  --color-icon: #c6c5d5;
+
+  --color-avatar: #333538;
+
+  --color-outline-variant: #454653;
 
   --color-status-high: #ff6b6b;
   --color-status-high-bg: rgba(255, 107, 107, 0.12);
@@ -50,6 +55,11 @@
   --color-main: var(--color-main);
   --color-muted: var(--color-muted);
 
+  --color-icon: var(--color-icon);
+
+  --color-outline-variant: var(--color-outline-variant);
+  --color-avatar: var(--color-avatar);
+
   --color-status-high: var(--color-status-high);
   --color-status-high-bg: var(--color-status-high-bg);
   --color-status-medium: var(--color-status-medium);
@@ -65,11 +75,12 @@
 }
 
 /* 3. Base styles */
-html, body {
+html,
+body {
   background-color: var(--color-canvas);
   color: var(--color-main);
   font-family: var(--font-sans);
   margin: 0;
   padding: 0;
   min-height: 100vh;
-}   
+}

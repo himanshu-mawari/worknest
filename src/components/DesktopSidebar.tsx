@@ -9,7 +9,7 @@ const navItems = [
 const DesktopSidebar = () => {
 
   return (
-    <aside className="w-60 h-screen bg-sidebar border-r border-subtle flex flex-col justify-between p-3 select-none">
+    <aside className="w-60 h-screen bg-sidebar border-r border-outline-variant flex flex-col justify-between p-3 select-none">
       <div className="flex flex-col items-start gap-1 px-2 pt-1">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -88,7 +88,7 @@ const DesktopSidebar = () => {
         </ul>
       </nav>
 
-      <footer className="pt-2 border-t border-subtle">
+      <footer className="pt-2 border-t border-outline-variant">
         <a
           href="#settings"
           className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-main hover:bg-surface-hover transition-colors"

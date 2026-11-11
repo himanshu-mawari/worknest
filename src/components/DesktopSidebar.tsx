@@ -65,9 +65,8 @@ const DesktopSidebar = () => {
                   end
                   className={({ isActive }) => `flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors 
                   ${isActive
-                      ? "bg-surface text-primary font-semibold shadow-sm"
+                      ? "bg-surface-container-high border-l-2  text-primary font-semibold shadow-sm"
                       : "text-muted hover:text-main hover:bg-surface-hover"
-
                     }`
                   }
                 >

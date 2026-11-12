@@ -14,6 +14,8 @@
 
   --color-overlay: #181d26;
 
+  --color-error:  #ffb4ab;
+
   --color-interactive: #262c38;
 
   --color-primary: #7c8cff;
@@ -62,6 +64,8 @@
   --color-overlay: var(--color-overlay);
 
   --color-card: var(--color-card);
+
+  --color-error: var(--color-error);
 
   --color-subtle: var(--color-subtle);
   --color-interactive: var(--color-interactive);

@@ -1,5 +1,9 @@
 import { Search, Bell, CircleQuestionMark, Plus } from "lucide-react"
+import TaskForm from "./TaskForm"
+import { useState } from "react";
+
 const Header = () => {
+  const [isFormActive, setIsFormActive] = useState(false)
   return (
     <header className="flex justify-between bg-surface border-b border-outline-variant py-2 px-5">
       <search className="w-full max-w-sm">
@@ -29,7 +33,8 @@ const Header = () => {
           </button>
         </div>
 
-        <button type="button" className="flex items-center gap-1.5 bg-primary text-on-primary px-4 py-1.5 text-xs font-medium leading-4 tracking-[0.002em] rounded-btn transition-all duration-150 hover:bg-primary-hover active:scale-[0.98]">
+        <button type="button" className="flex items-center gap-1.5 bg-primary text-on-primary px-4 py-1.5 text-xs font-medium leading-4 tracking-[0.002em] rounded-btn transition-all duration-150 hover:bg-primary-hover active:scale-[0.98] cursor-pointer"
+          onClick={() => setIsFormActive(true)}>
           <Plus size={16} strokeWidth={2.5} />
           <span>Create Task</span>
         </button>
@@ -40,7 +45,7 @@ const Header = () => {
           </div>
         </div>
       </nav>
-
+      {isFormActive && <TaskForm onClose={() => setIsFormActive(false)} />}
     </header>
   )
 }

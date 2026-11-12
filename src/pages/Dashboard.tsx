@@ -1,8 +1,8 @@
 import { dashboardMetrics } from "../data/metricDataset.ts";
 import MetricCard from "../components/MetricCard";
 import { useState } from "react";
-import { taskFilter, recentTasks, getStatusColor } from "../data/taskDataset.ts";
-import { Check } from "lucide-react";
+import { taskFilter, recentTasks, getPriorityColor, getStatusColor, getDueDateColor } from "../data/taskDataset.ts";
+import { Check, Calendar, Clock } from "lucide-react";
 
 const Dashboard = () => {
   const [currentFilter, setCurrentFilter] = useState("All");
@@ -75,16 +75,28 @@ const Dashboard = () => {
                     <h3 className={`text-sm font-normal text-on-surface truncate ${task.completed ? "line-through text-outline" : ""}`}>
                       {task.title}
                     </h3>
-                    <p className="flex gap-2 text-sm">
+                    <div className="flex items-center gap-2 text-sm text-on-surface-variant">
                       <span className="text-tertiary-fixed-dim">{task.category}</span>
-                      <span className="text-outline-variant">•</span>
-                      <span>{task.dueDate}</span>
-                    </p>
+                      <span className="text-outline-variant select-none">•</span>
+                      <span className={`${getDueDateColor(task.dueDate)} inline-flex items-center gap-1.5`}>
+                        {task.dueDate === "Completed" ? (
+                          <Check size={16} strokeWidth={2} />
+                        ) : task.dueDate === "Today" ? (
+                          <Clock size={16} strokeWidth={2} />
+                        ) : (
+                          <Calendar size={16} strokeWidth={2} />
+                        )}
+                        <span>Due: {task.dueDate}</span>
+                      </span>
+                    </div>
                   </div>
                 </div>
                 <div className="flex shrink-0 items-center gap-3.5">
-                  <span className={`text-sm rounded px-2 py-0.5 font-medium ${getStatusColor(task.priority)}`}>{task.priority}</span>
-                  <span className="bg-surface-container-highest text-on-surface-variant text-sm border border-outline-variant rounded-full px-2 py-0.5">{task.status}</span>
+                  <span className={`text-sm rounded px-2 py-0.5 font-medium ${getPriorityColor(task.priority)}`}>{task.priority}</span>
+                  <span className="inline-flex items-center gap-2 bg-surface-container-highest text-on-surface-variant text-sm px-3 py-1 border border-outline-variant rounded-full">
+                    <span className={`w-1.5 h-1.5 rounded-full ${getStatusColor(task.status)}`} />
+                    <span>{task.status}</span>
+                  </span>
                 </div>
               </article>
             </li>

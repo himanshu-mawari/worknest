@@ -28,7 +28,7 @@ const Dashboard = () => {
           Here is an overview of your active tasks and projects today.
         </p>
       </header>
-      <section className="grid grid-cols-4 gap-6 py-6 w-full ">
+      <section className="grid grid-cols-4 gap-6  w-full ">
         {dashboardMetrics.map((data) => (
           <MetricCard key={data.title} data={data} />
         ))}

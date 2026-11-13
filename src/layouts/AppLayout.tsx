@@ -10,7 +10,7 @@ const homeLayout = () => {
       <div className="flex-1 flex flex-col min-w-0">
         <Header />
 
-        <main className="flex-1 p-6">
+        <main className="flex flex-col flex-1 p-5 gap-4">
           <Outlet />
         </main>
       </div>

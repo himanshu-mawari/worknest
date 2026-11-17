@@ -10,8 +10,10 @@ const Project = () => {
   const [order, setOrder] = useState("Recently Updated")
 
   const getLoadingPercentage = (project: typeof mockProjects[number]) => {
-    const result = Math.floor((project.done / project.totalTasks ? project.totalTasks : 0) * 100)
-    return result + "%"
+    if (!project.totalTasks) return "0%";
+
+    const percentage = (project.done / project.totalTasks) * 100;
+    return `${Math.floor(percentage)}%`;
   }
 
   return (

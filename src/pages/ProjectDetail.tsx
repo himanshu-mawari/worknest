@@ -6,11 +6,11 @@ import { multiView } from "../data/projectDataset";
 import { Outlet } from "react-router";
 import {projectTasks} from "../data/projectDataset";
 
+
 const ProjectDetail = () => {
   const [priority, setPriority] = useState("All Priorities")
   const [assign, setAssign] = useState("All Assigned");
   const [tasks, setTasks] = useState(projectTasks);
-
   const teamMembers = ["AV", "SC", "MB", "HM", "JS", "VB", "KM"];
 
   return (
@@ -87,8 +87,6 @@ const ProjectDetail = () => {
                 </NavLink>)
             }
             )}
-
-
           </nav>
 
           <div className="flex items-center gap-2">

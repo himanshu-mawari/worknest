@@ -12,9 +12,10 @@
   --color-surface-container-lowest: #0c0e11;
   --color-surface-container-highest: #333538;
 
+
   --color-overlay: #181d26;
 
-  --color-error:  #ffb4ab;
+  --color-error: #ffb4ab;
 
   --color-interactive: #262c38;
 
@@ -23,6 +24,9 @@
   --color-on-primary: #001892;
   --color-tertiary-fixed-dim: #c1c6d6;
   --color-outline: #8f8f9f;
+
+  --color-secondary-container: #2535b4;
+  --color-on-secondary: #00159d;
 
   --color-main: #f1f3f5;
   --color-muted: #9299a5;
@@ -34,6 +38,8 @@
   --color-card: #1e2023;
 
   --color-outline-variant: #454653;
+
+  --color-surface-bright: #37393d;
 
   --color-status-high: #ff6b6b;
   --color-status-high-bg: rgba(255, 107, 107, 0.12);
@@ -75,6 +81,11 @@
   --color-on-primary: var(--color-on-primary);
   --color-tertiary-fixed-dim: var(--color-tertiary-fixed-dim);
   --color-outline: var(--color-outline);
+
+  --color-secondary-container: var(--color-secondary-container);
+  --color-on-secondary: var(--color-on-secondary);
+
+  --color-surface-bright : var(--color-surface-bright);
 
   --color-main: var(--color-main);
   --color-muted: var(--color-muted);

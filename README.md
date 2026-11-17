@@ -1,75 +1,85 @@
-# React + TypeScript + Vite
+#  Worknest
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> An enterprise-grade workspace and task management dashboard built to master TypeScript patterns, scalable React architecture, and modern UI/UX design systems.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 About the Project
 
-## React Compiler
+**Worknest** is a modern project management workspace designed to bridge clean product UI with robust type-safe engineering. Built with a focus on **mastering TypeScript with React**, the project prioritizes strict prop contracts, clean component composition, and reusable UI abstractions over repetitive boilerplate.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧰 Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+| Category | Technology |
+| :--- | :--- |
+| **Framework** | React (Vite) |
+| **Language** | TypeScript |
+| **Styling** | Tailwind CSS v4 |
+| **Routing** | React Router  |
+| **Icons** | Lucide React |
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## ✨ Key Features
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+* **Kanban Task Workspace:** Interactive board view for organizing and tracking sprint tasks across workflow stages.
+* **Reusable `FeaturePlaceholder` Pattern:** A DRY, type-safe UI component that dynamically renders planned roadmap views (`List`, `Timeline`) with custom icons, status badges, and one-click navigation back to the board.
+* **Nested Route Layouts:** Shared project layout architecture using React Router's `<Outlet />` context to pass workspace state cleanly across views.
+* **Theme-Ready UI:** Built with semantic CSS variables (`bg-card`, `text-foreground`, `border-border`) for seamless dark and light mode consistency.
 
+---
+
+## 📂 Project Structure
+
+```text
+worknest/
+├── src/
+│   ├── components/         # Reusable UI primitives (FeaturePlaceholder, etc.)
+│   ├── layouts/            # Nested route layouts with <Outlet/> context
+│   ├── pages/              # Route views (Kanban, List, Timeline)
+│   ├── types/              # Shared TypeScript interfaces and types
+│   ├── App.tsx             # Route definitions and app shell
+│   └── main.tsx            # Entry point
+├── index.html
+├── package.json
+└── tsconfig.json
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🛠️ Getting Started
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Prerequisites
+* **Node.js** (v18 or higher)
+* **npm** or **pnpm**
 
-```
+### Installation & Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone [https://github.com/your-username/worknest.git](https://github.com/your-username/worknest.git)
+   cd worknest
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+4. Open `http://localhost:5173` in your browser.
+
+---
+
+## 🎯 Key Takeaways & Learnings
+
+* **Idiomatic React + TypeScript:** Typing component props, optional vs. required fields, and third-party component types (`LucideIcon`) without relying on `any`.
+* **Component Composition:** Abstracting repetitive UI states into a single configurable component instead of duplicating markup across multiple route files.
+* **React Router Patterns:** Structuring parent-child routes with `<Outlet />` and handling programmatic navigation cleanly inside leaf components.
+
